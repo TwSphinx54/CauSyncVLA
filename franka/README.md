@@ -9,7 +9,7 @@ The physical policy uses the 100 Hz feedback adapter and the frozen FR3 action e
    export PYTHONPATH="$PWD/.runtime/franka:$PWD/packages/openpi-client/src${PYTHONPATH:+:$PYTHONPATH}"
    ```
 
-2. Place the matching privately distributed FR3 backbone, including its normalization assets, in `models/pi05_fr3_pytorch/`. Download the released FR3 updater into `weights/franka/`. Use Python from the same OpenPI environment. Inspect the interface with `python -m openpi.robot.server --help`. The server default is loopback; the released code implements the policy side of the protocol. Hardware-specific drivers and the laboratory operator console are maintained separately.
+2. Place the matching privately distributed FR3 backbone, including its normalization assets, in `models/pi05_fr3_pytorch/`. If you have access to the private FR3 updater, place it at `weights/franka/updater.safetensors`. Use Python from the same OpenPI environment. Inspect the interface with `python -m openpi.robot.server --help`. The server default is loopback; the released code implements the policy side of the protocol. Hardware-specific drivers and the laboratory operator console are maintained separately.
 
 3. The policy configuration is `configs/franka.json`. After a fresh real visual anchor, inference consumes the actual issued actions. The physical setup used the latest feedback, a 100 Hz host dispatch ceiling, H=10 and C=2. Physical hold ticks, new action nodes, and new plans have different rates.
 

@@ -9,4 +9,4 @@
 
 **Evaluation.** The native LIBERO run uses seed 7, ten tasks, fifty initial states per task and an upper bound of 520 control steps. The timed protocol uses a separate scheduler. Record GPU sharing, rendering placement, and whether timestamps refer to observation, plan readiness or first command dispatch when comparing rates.
 
-**Data access.** The release supplies the method code, two updater checkpoints and portable recipes. The private expert training rollouts, physical recordings and the FR3 foundation checkpoint are separate inputs. The four expert sources in the LIBERO recipe are groups of 600/300/300/300 training trajectories. Use a training-only split for fitted normalization.
+**Data access.** The release supplies the method code, the LIBERO updater checkpoint and portable recipes. The FR3 updater, its matching expert and the training recordings are privately held. The four expert sources in the LIBERO recipe are groups of 600/300/300/300 training trajectories. Use a training-only split for fitted normalization.

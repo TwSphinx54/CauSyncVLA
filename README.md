@@ -20,10 +20,10 @@ For simulation, install the [LIBERO environment and assets](https://github.com/L
 
 ## Weights
 
-Download the two model-only adapters, or select an individual profile using `--include`:
+Download the LIBERO updater:
 
 ```sh
-hf download SSSSphinx/CauSyncVLA --include 'libero/*' 'franka/*' --local-dir weights
+hf download SSSSphinx/CauSyncVLA --include 'libero/*' --local-dir weights
 ```
 
 For LIBERO, use the official frozen `pi05_libero` checkpoint from [OpenPI](https://github.com/Physical-Intelligence/openpi). Convert it with the supplied converter and retain the original normalization assets:
@@ -34,7 +34,7 @@ python examples/convert_jax_model_to_pytorch.py \
   --output-path models/pi05_libero_pytorch --precision bfloat16
 ```
 
-Check that `models/pi05_libero_pytorch/assets/physical-intelligence/libero/norm_stats.json` is present. Both released adapters contain the original updater normalization buffers. The loader checks the adapter architecture, profile, and matching action normalization, then strictly loads the parameters. The FR3 adapter requires the laboratory's separately held action expert.
+Check that `models/pi05_libero_pytorch/assets/physical-intelligence/libero/norm_stats.json` is present. The released LIBERO adapter contains its original updater normalization buffers. The loader checks the adapter architecture, profile, and matching action normalization, then strictly loads the parameters. The Franka updater and its matching action expert are privately held.
 
 ## Native evaluation
 
