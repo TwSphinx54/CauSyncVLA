@@ -1,0 +1,45 @@
+{
+  "system": {
+    "robot_profile": "fr3",
+    "base_checkpoint": "../models/pi05_fr3_pytorch",
+    "num_steps": 1,
+    "replan_steps": 2,
+    "dual": {
+      "enabled": true,
+      "updater_checkpoint": "../weights/franka/updater.safetensors",
+      "mode": "threaded",
+      "updater_enabled": true,
+      "updater_min_age": 1,
+      "max_age": 24
+    },
+    "cache": {
+      "enabled": true,
+      "restart_time": 0.5,
+      "warm_nfe": 1
+    },
+    "updater": {
+      "history": 24,
+      "layers": 18,
+      "head_dim": 256,
+      "hidden_dim": 384,
+      "depth": 6,
+      "heads": 4,
+      "text_tokens": 200,
+      "state_dim": 7,
+      "action_dim": 7,
+      "time_conditioned": true
+    },
+    "inference": {
+      "backend": "stock",
+      "compile_mode": "max-autotune-no-cudagraphs"
+    }
+  },
+  "deployment": {
+    "source_base_checkpoint": "pi05_fr3_pytorch",
+    "recorded_data_hz": 10,
+    "execution_mode": "accelerated100",
+    "model_version": "feedback100_20261114",
+    "trained_action_node_ms": 100,
+    "startup_validation": "warmup_only"
+  }
+}

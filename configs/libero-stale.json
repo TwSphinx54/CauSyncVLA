@@ -1,0 +1,33 @@
+{
+  "num_steps": 1,
+  "replan_steps": 5,
+  "dual": {
+    "enabled": true,
+    "mode": "threaded",
+    "updater_enabled": false,
+    "updater_min_age": 1,
+    "max_age": 48,
+    "updater_checkpoint": "weights/libero/updater.safetensors"
+  },
+  "cache": {
+    "enabled": true,
+    "restart_time": 0.5,
+    "warm_nfe": 1
+  },
+  "updater": {
+    "history": 48,
+    "layers": 18,
+    "head_dim": 256,
+    "hidden_dim": 384,
+    "depth": 6,
+    "heads": 4,
+    "text_tokens": 32,
+    "state_dim": 8,
+    "action_dim": 7
+  },
+  "inference": {
+    "backend": "stock",
+    "compile_mode": "max-autotune-no-cudagraphs"
+  },
+  "base_checkpoint": "models/pi05_libero_pytorch"
+}

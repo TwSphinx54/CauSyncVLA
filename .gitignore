@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.runtime/
+.pytest_cache/
+.DS_Store
+/runs/
+/weights/
+/models/
+/data/
+/wandb/
+*.log
+MUJOCO_LOG.TXT
