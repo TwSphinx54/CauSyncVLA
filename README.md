@@ -4,7 +4,7 @@
 
 CauSyncVLA updates a frozen vision-language-action policy between visual observations. A learned updater starts from the latest published visual KV cache and conditions on the state and action history actually executed since that observation. The frozen action expert can refine the shifted tail of its previous plan with one flow step. KV prediction and action warm starting are independently configurable.
 
-[Updater weights on Hugging Face](https://huggingface.co/SSSSphinx/CauSyncVLA) · [Experiment settings](docs/EXPERIMENTS.md) · [Reported results](docs/PAPER_RESULTS.md) · [Franka profile](franka/README.md)
+[Paper (arXiv)](https://arxiv.org/abs/2611.25667) · [Updater weights on Hugging Face](https://huggingface.co/SSSSphinx/CauSyncVLA) · [Experiment settings](docs/EXPERIMENTS.md) · [Reported results](docs/PAPER_RESULTS.md) · [Franka profile](franka/README.md)
 
 ## Installation
 
@@ -62,3 +62,17 @@ The reported LIBERO checkpoint is the 12,000-update milestone. The original trai
 ## License and attribution
 
 See [LICENSE](LICENSE), [NOTICE](NOTICE) and the accompanying [Gemma terms](LICENSE_GEMMA.txt). OpenPI, the datasets and the separately obtained foundation checkpoints retain their respective upstream terms.
+
+## Citation
+
+```bibtex
+@misc{pan2026causyncvla,
+  title         = {{CauSyncVLA}: Causal Latent World Modeling for Asynchronous Robot Control},
+  author        = {Xu Pan and Chubin Zhang and Xingrui Yu and Runmin Lan and Zihao Wang and Wenkai Guo and Bofang Jia and Bo An and Ziwei Wang},
+  year          = {2026},
+  eprint        = {2611.25667},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2611.25667}
+}
+```
